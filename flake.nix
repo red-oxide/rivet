@@ -3,13 +3,13 @@
 
   inputs = {
     base24-themes = {
-      url = "github:chrisppy/base24-themes";
+      url = "github:red-oxide/base24-themes";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.devfmt.follows = "devfmt";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     devfmt = {
-      url = "github:chrisppy/devfmt";
+      url = "github:red-oxide/devfmt";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

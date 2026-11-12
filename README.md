@@ -3,7 +3,7 @@
 The [Zola](https://www.getzola.org) theme shared by
 [chris.palmerlife.online](https://chris.palmerlife.online) and
 [red-oxide.org](https://red-oxide.org): a terminal-flavored layout in the
-Birdland [base24](https://github.com/chrisppy/base24-themes) palette.
+Birdland [base24](https://github.com/red-oxide/base24-themes) palette.
 
 ## Using it
 
@@ -25,7 +25,7 @@ Cloudflare Pages checks out submodules on its own. In GitHub Actions, use
 
 Every rivet site shares one palette: `sass/_palette.scss`, the `--base00` …
 `--base17` custom properties, generated from a
-[base24-themes](https://github.com/chrisppy/base24-themes) scheme (Birdland). To
+[base24-themes](https://github.com/red-oxide/base24-themes) scheme (Birdland). To
 recolor every site, change `scheme` in `nix/palette.nix`, then:
 
 ```sh

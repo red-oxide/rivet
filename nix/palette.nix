@@ -23,7 +23,7 @@ in
       ) base24.colorNames;
 
       generatedScss = ''
-        // Generated from chrisppy/base24-themes by `nix run .#generate-palette`
+        // Generated from red-oxide/base24-themes by `nix run .#generate-palette`
         // Scheme: ${meta.name}
         // Variant: ${meta.variant}
         // Do not edit manually.
