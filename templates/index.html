@@ -18,8 +18,8 @@
             <img class="hero-avatar{% if hero.shape | default(value='round') == 'square' %} hero-avatar--square{% endif %}"
                  src="{{ get_url(path=hero.src) }}"
                  {%- if hero.src_2x %}
-                     srcset="{{ get_url(path=hero.src) }} 1x,
-                             {{ get_url(path=hero.src_2x) }} 2x"
+                 srcset="{{ get_url(path=hero.src) }} 1x,
+                         {{ get_url(path=hero.src_2x) }} 2x"
                  {%- endif %}
                  width="{{ size }}"
                  height="{{ size }}"

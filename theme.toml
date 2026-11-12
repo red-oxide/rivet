@@ -1,10 +1,10 @@
-name = "rivet"
+demo        = "https://red-oxide.org"
 description = "A terminal-flavored Zola theme with base24 palettes, shared by chris.palmerlife.online and red-oxide.org."
-license = "MIT"
-homepage = "https://github.com/red-oxide/rivet"
+homepage    = "https://github.com/red-oxide/rivet"
+license     = "MIT"
 min_version = "0.23.0"
-demo = "https://red-oxide.org"
+name        = "rivet"
 
 [author]
-name = "Chris Palmer"
 homepage = "https://chris.palmerlife.online"
+name     = "Chris Palmer"

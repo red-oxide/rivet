@@ -25,15 +25,15 @@ Cloudflare Pages checks out submodules on its own. In GitHub Actions, use
 
 Every rivet site shares one palette: `sass/_palette.scss`, the `--base00` …
 `--base17` custom properties, generated from a
-[base24-themes](https://github.com/chrisppy/base24-themes) scheme (Birdland).
-To recolor every site, change `scheme` in `nix/palette.nix`, then:
+[base24-themes](https://github.com/chrisppy/base24-themes) scheme (Birdland). To
+recolor every site, change `scheme` in `nix/palette.nix`, then:
 
 ```sh
 nix run .#generate-palette   # writes sass/_palette.scss
 ```
 
-Sites pick up the change when they move their submodule to the new commit.
-For site-only rules, add `sass/site.scss` and set `extra.rivet.site_css = true`.
+Sites pick up the change when they move their submodule to the new commit. For
+site-only rules, add `sass/site.scss` and set `extra.rivet.site_css = true`.
 
 ### Settings
 
@@ -56,16 +56,16 @@ Sites also provide `favicon.ico`, `favicon.svg` and `apple-touch-icon.png` in
 
 ### Templates
 
-| Template               | For                                               |
-| ---------------------- | ------------------------------------------------- |
-| `index.html`           | home: hero from the root section, recent pages    |
-| `page.html`            | plain pages                                       |
-| `section.html`         | section with its pages listed                     |
-| `blog-post.html`       | dated posts with reading time and tags            |
-| `project.html`         | pages that append remote Markdown (`remote_md`)   |
-| `components.html`      | the `remote_md` component (see the file for args) |
-| `taxonomy_*.html`      | tag lists                                         |
-| `nav.html`, `footer.html`, `404.html` | built from `[extra.rivet]`         |
+| Template | For |
+| ------------------------------------- | ------------------------------------------------- |
+| `index.html` | home: hero from the root section, recent pages |
+| `page.html` | plain pages |
+| `section.html` | section with its pages listed |
+| `blog-post.html` | dated posts with reading time and tags |
+| `project.html` | pages that append remote Markdown (`remote_md`) |
+| `components.html` | the `remote_md` component (see the file for args) |
+| `taxonomy_*.html` | tag lists |
+| `nav.html`, `footer.html`, `404.html` | built from `[extra.rivet]` |
 
 A site overrides any of them by putting a file with the same name in its own
 `templates/`. `base.html` has an empty `head` block for extra tags.
