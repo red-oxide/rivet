@@ -1,0 +1,18 @@
+{#- extra.rivet.footer_links: [{ name = "MIT / CC BY 4.0", path = "license/" }, ...] -#}
+{%- set rivet = config.extra.rivet | default(value={}) -%}
+<footer class="site-footer">
+    <div class="container">
+        <span>© {{ now() | date(format="%Y") }} {{ config.author }}</span>
+        <span>
+            {%- for link in rivet.footer_links | default(value=[]) %}
+                <a href="{{ get_url(path=link.path) }}">{{ link.name }}</a>
+                ·
+            {%- endfor %}
+            {%- if config.generate_feeds %}
+                <a href="{{ get_url(path="atom.xml") }}">atom</a>
+                ·
+            {%- endif %}
+            <span>built with Zola</span>
+        </span>
+    </div>
+</footer>

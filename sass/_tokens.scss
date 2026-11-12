@@ -1,0 +1,37 @@
+// Semantic colors and layout tokens. Colors map onto _palette.scss
+// (`--base00` … `--base17`, generated from base24-themes).
+
+:root {
+  --background: var(--base00);
+  --background-secondary: var(--base01);
+  --background-highlight: var(--base02);
+
+  --foreground-muted: var(--base04);
+  --foreground: var(--base05);
+  --foreground-bright: var(--base06);
+  --foreground-maximum: var(--base07);
+
+  --red: var(--base08);
+  --orange: var(--base09);
+  --yellow: var(--base0A);
+  --green: var(--base0B);
+  --cyan: var(--base0C);
+  --blue: var(--base0D);
+  --magenta: var(--base0E);
+  --gray: var(--base0F);
+
+  --red-bright: var(--base12);
+  --yellow-bright: var(--base13);
+  --green-bright: var(--base14);
+  --cyan-bright: var(--base15);
+  --blue-bright: var(--base16);
+  --magenta-bright: var(--base17);
+
+  --font-mono:
+    "SFMono-Regular", "Cascadia Mono", "Cascadia Code", "Roboto Mono",
+    "DejaVu Sans Mono", monospace;
+
+  --content-width: 72rem;
+  --reading-width: 48rem;
+  --border-radius: 0.25rem;
+}

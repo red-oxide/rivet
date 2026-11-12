@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Not found · {{ config.title }}{% endblock title %}
+{% block description %}This page doesn't exist.{% endblock description %}
+{% block content %}
+    {#- Links under the message: extra.rivet.not_found_links, else the nav. -#}
+    {%- set rivet = config.extra.rivet | default(value={}) -%}
+    {%- set links = rivet.not_found_links | default(value=rivet.nav | default(value=[])) -%}
+    <section class="hero" aria-labelledby="not-found-title">
+        <h1 id="not-found-title" class="hero-title">404</h1>
+        <p class="hero-subtitle">No such file or directory.</p>
+        <div class="content">
+            <p>The page you're looking for isn't here. It may have moved, or the link may be wrong.</p>
+            <p>
+                <a href="{{ config.base_url }}">~/</a>
+                {%- for link in links %}
+                    ·
+                    <a href="{{ get_url(path=link.path) }}">./{{ link.name }}</a>
+                {%- endfor %}
+            </p>
+        </div>
+    </section>
+{% endblock content %}

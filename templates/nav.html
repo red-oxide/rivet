@@ -1,0 +1,8 @@
+{#- extra.rivet.nav: [{ name = "about", path = "about/" }, ...] -#}
+{%- set rivet = config.extra.rivet | default(value={}) -%}
+<nav class="site-nav" aria-label="Main navigation">
+    {%- for item in rivet.nav | default(value=[]) %}
+        <a href="{{ get_url(path=item.path) }}"
+           {% if current_path == "/" ~ item.path %}aria-current="page"{% endif %}>{{ item.name }}</a>
+    {%- endfor %}
+</nav>

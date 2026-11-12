@@ -1,0 +1,18 @@
+# Zola output
+/public/
+
+# Nix
+/result
+/result-*
+
+# Local/editor files
+.direnv/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

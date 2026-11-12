@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{#-
+    Home page: a hero from the root section, then optionally the latest pages
+    of one section.
+
+        extra.rivet.hero_image  { src, src_2x, size, shape }, shape "round"
+                                (default) or "square"
+        extra.rivet.recent      { section, count, heading, empty }
+-#}
+{% block title %}{{ section.title }}{% endblock title %}
+{% block description %}{{ section.description }}{% endblock description %}
+{% block content %}
+    {%- set rivet = config.extra.rivet | default(value={}) -%}
+    <section class="hero" aria-labelledby="hero-title">
+        {%- if rivet.hero_image %}
+            {%- set hero = rivet.hero_image %}
+            {%- set size = hero.size | default(value=128) %}
+            <img class="hero-avatar{% if hero.shape | default(value='round') == 'square' %} hero-avatar--square{% endif %}"
+                 src="{{ get_url(path=hero.src) }}"
+                 {%- if hero.src_2x %}
+                     srcset="{{ get_url(path=hero.src) }} 1x,
+                             {{ get_url(path=hero.src_2x) }} 2x"
+                 {%- endif %}
+                 width="{{ size }}"
+                 height="{{ size }}"
+                 alt="{{ config.title }}">
+        {%- endif %}
+        <h1 id="hero-title" class="hero-title">{{ section.title }}</h1>
+        <div class="content">{{ section.content | safe }}</div>
+    </section>
+    {%- if rivet.recent %}
+        {%- set recent = rivet.recent %}
+        {%- set heading = recent.heading | default(value="Recent posts") %}
+        {%- set count = recent.count | default(value=5) %}
+        <section aria-labelledby="recent-posts">
+            <h2 id="recent-posts">{{ heading }}</h2>
+            {% set listed = get_section(path=recent.section) %}
+            {% if listed.pages %}
+                <ul class="post-list">
+                    {% for post in listed.pages %}
+                        {% if loop.index <= count %}
+                            <li class="post">
+                                <h3 class="post-title">
+                                    <a href="{{ post.permalink }}">{{ post.title }}</a>
+                                </h3>
+                                {% if post.date %}
+                                    <div class="post-date">
+                                        <time datetime="{{ post.date }}">
+                                            {{ post.date | date(format="%Y-%m-%d") }}
+                                        </time>
+                                    </div>
+                                {% endif %}
+                                {% if post.description %}
+                                    <p class="post-summary">{{ post.description }}</p>
+                                {% endif %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <p>
+                    <a href="{{ get_url(path='@/' ~ recent.section) }}">./{{ listed.components | last | default(value=listed.title | lower) }}</a>
+                </p>
+            {% else %}
+                <p>{{ recent.empty | default(value="No posts yet.") }}</p>
+            {% endif %}
+        </section>
+    {%- endif %}
+{% endblock content %}

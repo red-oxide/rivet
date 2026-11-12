@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  # "Update flake inputs" pushes with the built-in token, which doesn't
+  # start other workflows, so check its lock updates when it finishes.
+  workflow_run:
+    workflows: ["Update flake inputs"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Run flake checks (formatting)
+        run: nix flake check --print-build-logs
