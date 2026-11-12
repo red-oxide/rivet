@@ -25,8 +25,8 @@ Cloudflare Pages checks out submodules on its own. In GitHub Actions, use
 
 Every rivet site shares one palette: `sass/_palette.scss`, the `--base00` …
 `--base17` custom properties, generated from a
-[base24-themes](https://github.com/red-oxide/base24-themes) scheme (Birdland). To
-recolor every site, change `scheme` in `nix/palette.nix`, then:
+[base24-themes](https://github.com/red-oxide/base24-themes) scheme (Birdland).
+To recolor every site, change `scheme` in `nix/palette.nix`, then:
 
 ```sh
 nix run .#generate-palette   # writes sass/_palette.scss
