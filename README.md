@@ -58,7 +58,7 @@ Sites also provide `favicon.ico`, `favicon.svg` and `apple-touch-icon.png` in
 ### Templates
 
 | Template | For |
-| ------------------------------------- | ------------------------------------------------- |
+| ------------------------------------- | --------------------------------------------------- |
 | `index.html` | home: hero from the root section, recent pages |
 | `page.html` | plain pages |
 | `section.html` | section with its pages listed |
