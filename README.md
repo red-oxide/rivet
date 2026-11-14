@@ -46,6 +46,7 @@ nav = [{ name = "about", path = "about/" }, { name = "blog", path = "blog/" }]
 footer_links = [{ name = "MIT / CC BY 4.0", path = "license/" }]
 not_found_links = [{ name = "blog", path = "@/blog/_index.md" }] # default: nav
 og_image = { path = "avatar-512.jpg", width = 512, height = 512 }
+feed_image = "avatar-512.jpg"                      # Atom feed <icon> and <logo>; square PNG/JPEG
 hero_image = { src = "avatar-256.webp", src_2x = "avatar-512.webp", size = 128, shape = "round" } # or "square"
 recent = { section = "blog/_index.md", count = 5, heading = "Recent posts" }
 site_css = false
@@ -64,6 +65,7 @@ Sites also provide `favicon.ico`, `favicon.svg` and `apple-touch-icon.png` in
 | `blog-post.html` | dated posts with reading time and tags |
 | `project.html` | pages that append remote Markdown (`remote_md`) |
 | `components.html` | the `remote_md` component (see the file for args) |
+| `atom.xml` | Zola's feed, plus `feed_image` as `<icon>`/`<logo>` |
 | `taxonomy_*.html` | tag lists |
 | `nav.html`, `footer.html`, `404.html` | built from `[extra.rivet]` |
 
