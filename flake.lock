@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795076517,
-        "narHash": "sha256-LkrgiBslz1iCaoiAPHs4aFDXs8EZDe9OmipVvE/s24U=",
+        "lastModified": 1795161707,
+        "narHash": "sha256-TLMO+4m81iqfbas6x1Oqhxa00ZWm1fqvS7WmPaylfnY=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "14ba222abf2a0843b9d219f21282fb6c901853cb",
+        "rev": "513e84a70a7ba15c6346194cac6902a1622a9733",
         "type": "github"
       },
       "original": {
@@ -113,11 +113,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1794890597,
-        "narHash": "sha256-lME2lHoDHAaSHP3/okgiVoJ0icVEvsQH8LeU3We7tcc=",
+        "lastModified": 1795085501,
+        "narHash": "sha256-S5keGWzaKpuXo9MNoIC2FfTIuTyTnx8P4NhYJMEsTLI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "04906337b6d53e8bb0eaf0470ae9f070a4d4eb55",
+        "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
         "type": "github"
       },
       "original": {
