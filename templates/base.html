@@ -44,9 +44,9 @@
               type="image/svg+xml">
         <link rel="apple-touch-icon"
               href="{{ get_url(path = 'apple-touch-icon.png') }}">
-        <link rel="stylesheet" href="{{ get_url(path = 'rivet.css') }}">
+        <link rel="stylesheet" href="{{ get_url(path = 'rivet.css', cachebust = true) }}">
         {%- if rivet.site_css %}
-            <link rel="stylesheet" href="{{ get_url(path = 'site.css') }}">
+            <link rel="stylesheet" href="{{ get_url(path = 'site.css', cachebust = true) }}">
         {%- endif %}
         {% if config.generate_feeds %}
             <link rel="alternate"
