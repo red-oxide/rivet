@@ -121,9 +121,11 @@ blockquote {
 }
 
 // GitHub-style alerts (> [!NOTE] etc.), enabled by markdown.github_alerts.
-@each $kind, $label, $color in (note, "Note", blue), (tip, "Tip", green),
-  (important, "Important", magenta), (warning, "Warning", yellow),
-  (caution, "Caution", red) {
+// The color names are quoted: bare, Sass reads them as colors, and compressed
+// output turns magenta and yellow into #f0f and #ff0.
+@each $kind, $label, $color in (note, "Note", "blue"), (tip, "Tip", "green"),
+  (important, "Important", "magenta"), (warning, "Warning", "yellow"),
+  (caution, "Caution", "red") {
   .markdown-alert-#{$kind} {
     border-left-color: var(--#{$color});
 
