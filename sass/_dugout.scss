@@ -94,8 +94,9 @@ $stitches: repeating-linear-gradient(
     mask: $seams center / 100% no-repeat;
   }
 
-  // Post titles and skill groups keep their bare headings.
-  .post-title::before,
+  // Post titles in h2 get the baseball; the home page's h3 post titles and
+  // skill groups keep their bare headings.
+  h3.post-title::before,
   .skill-group h3::before {
     content: none;
   }
