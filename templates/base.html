@@ -56,7 +56,7 @@
         {% block head %}
         {% endblock head %}
     </head>
-    <body class="site">
+    <body class="site rivet-{{ rivet.style | default(value="dugout") }}">
         <header class="site-header">
             <div class="container">
                 <a class="site-title" href="{{ config.base_url }}">

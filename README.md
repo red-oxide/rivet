@@ -41,6 +41,7 @@ Everything else lives under `[extra.rivet]`; all of it is optional.
 
 ```toml
 [extra.rivet]
+style = "dugout"                                   # or "terminal"; see Styles
 logo = "logo.svg"                                  # shown before the title
 nav = [{ name = "about", path = "about/" }, { name = "blog", path = "blog/" }]
 footer_links = [{ name = "MIT / CC BY 4.0", path = "license/" }]
@@ -51,6 +52,17 @@ hero_image = { src = "avatar-256.webp", src_2x = "avatar-512.webp", size = 128, 
 recent = { section = "blog/_index.md", count = 5, heading = "Recent posts" }
 site_css = false
 ```
+
+### Styles
+
+`style` picks the marks around the same layout and palette:
+
+- `dugout` (default): home plate before the title, bases before nav links and
+  tags, a baseball before `h2`, and stitching along the header, footer, cards
+  and avatar.
+- `terminal`: shell prompts — `~/`, `./`, `$`, `#`/`##`/`###` and `[…]`.
+
+The page's `<body>` carries `rivet-<style>`, so `site.css` can target either.
 
 Sites also provide `favicon.ico`, `favicon.svg` and `apple-touch-icon.png` in
 `static/`.

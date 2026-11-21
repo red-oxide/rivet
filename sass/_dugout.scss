@@ -1,0 +1,135 @@
+// The "dugout" style (extra.rivet.style, the default): the terminal prompts in
+// _base.scss, _layout.scss and _components.scss give way to baseball marks.
+// Selectors start with :where() so they carry no more weight than the rules
+// they replace and win by coming later, while the logo's `content: none` still
+// beats them. Templates swap their own "./" and "~/" links on the same setting.
+
+$stitches: repeating-linear-gradient(
+  90deg,
+  transparent 0 6px,
+  var(--red) 6px 12px
+);
+
+:where(.rivet-dugout) {
+  // Home plate in place of "~/".
+  .site-title::before {
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.5rem;
+    background: var(--orange);
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 50% 100%, 0 55%);
+    content: "";
+    vertical-align: -0.15rem;
+  }
+
+  // Bases in place of "./".
+  .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      width: 0.45rem;
+      height: 0.45rem;
+      background: var(--green);
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    &[aria-current="page"]::before {
+      background: var(--orange);
+    }
+  }
+
+  // Stitching under the header and over the footer.
+  .site-header {
+    padding-bottom: 6px;
+    background:
+      $stitches bottom / 100% 6px no-repeat,
+      var(--background-secondary);
+  }
+
+  .site-footer {
+    background:
+      $stitches top / 100% 6px no-repeat,
+      var(--background-secondary);
+  }
+
+  // Headings: no "#"; a baseball for h2, a base for h3.
+  h1::before,
+  .hero-title::before {
+    content: none;
+  }
+
+  h2::before {
+    display: inline-block;
+    width: 0.85em;
+    height: 0.85em;
+    margin-right: 0.5em;
+    border-radius: 50%;
+    background: var(--foreground-bright);
+    box-shadow:
+      inset 0.2em 0 0 -0.07em var(--red),
+      inset -0.2em 0 0 -0.07em var(--red);
+    content: "";
+    vertical-align: -0.08em;
+  }
+
+  // Post titles and skill groups keep their bare headings.
+  .post-title::before,
+  .skill-group h3::before {
+    content: none;
+  }
+
+  h3::before {
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    margin-right: 0.6em;
+    background: var(--cyan);
+    content: "";
+    transform: rotate(45deg);
+    vertical-align: 0.15em;
+  }
+
+  // A stitched ring around the avatar.
+  .hero-avatar:not(.hero-avatar--square) {
+    padding: 4px;
+    border: 3px dashed var(--red);
+  }
+
+  // Post metadata: no brackets; tags get a base instead of "#".
+  .meta::before,
+  .meta::after {
+    content: none;
+  }
+
+  .tag::before {
+    display: inline-block;
+    width: 0.4em;
+    height: 0.4em;
+    margin-right: 0.4em;
+    background: var(--green);
+    content: "";
+    transform: rotate(45deg);
+    vertical-align: 0.15em;
+  }
+
+  // A seam across the top of each card.
+  .post,
+  .skill-group {
+    background:
+      repeating-linear-gradient(90deg, var(--red) 0 8px, transparent 8px 14px)
+        top / 100% 4px no-repeat,
+      var(--background-secondary);
+  }
+
+  .post {
+    padding-top: calc(1.25rem + 4px);
+  }
+
+  .skill-group {
+    padding-top: calc(1rem + 4px);
+  }
+}

@@ -5,16 +5,19 @@
     {#- Links under the message: extra.rivet.not_found_links, else the nav. -#}
     {%- set rivet = config.extra.rivet | default(value={}) -%}
     {%- set links = rivet.not_found_links | default(value=rivet.nav | default(value=[])) -%}
+    {%- set terminal = rivet.style | default(value="dugout") == "terminal" -%}
     <section class="hero" aria-labelledby="not-found-title">
         <h1 id="not-found-title" class="hero-title">404</h1>
-        <p class="hero-subtitle">No such file or directory.</p>
+        <p class="hero-subtitle">
+            {%- if terminal %}No such file or directory.{% else %}Foul ball.{% endif -%}
+        </p>
         <div class="content">
             <p>The page you're looking for isn't here. It may have moved, or the link may be wrong.</p>
             <p>
-                <a href="{{ config.base_url }}">~/</a>
+                <a href="{{ config.base_url }}">{% if terminal %}~/{% else %}home{% endif %}</a>
                 {%- for link in links %}
                     ·
-                    <a href="{{ get_url(path=link.path) }}">./{{ link.name }}</a>
+                    <a href="{{ get_url(path=link.path) }}">{% if terminal %}./{% endif %}{{ link.name }}</a>
                 {%- endfor %}
             </p>
         </div>

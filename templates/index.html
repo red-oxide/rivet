@@ -58,7 +58,12 @@
                     {% endfor %}
                 </ul>
                 <p>
-                    <a href="{{ get_url(path='@/' ~ recent.section) }}">./{{ listed.components | last | default(value=listed.title | lower) }}</a>
+                    {%- set name = listed.components | last | default(value=listed.title | lower) %}
+                    {%- if rivet.style | default(value="dugout") == "terminal" %}
+                        <a href="{{ get_url(path='@/' ~ recent.section) }}">./{{ name }}</a>
+                    {%- else %}
+                        <a href="{{ get_url(path='@/' ~ recent.section) }}">{{ listed.title }} →</a>
+                    {%- endif %}
                 </p>
             {% else %}
                 <p>{{ recent.empty | default(value="No posts yet.") }}</p>
