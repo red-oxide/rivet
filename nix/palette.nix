@@ -1,7 +1,7 @@
 # rivet's palettes: `nix run .#generate-palette` writes sass/_palette.scss and
-# templates/theme-options.html from every base24-themes scheme (see
-# lib/palette.nix). Sites pick a default with extra.rivet.theme, and visitors
-# can switch in the header. `nix flake check` fails if either file is stale.
+# templates/theme-check.html from every base24-themes scheme (see
+# lib/palette.nix). Sites pick one with extra.rivet.theme. `nix flake check`
+# fails if either file is stale.
 { inputs, lib, ... }:
 
 let
@@ -12,7 +12,7 @@ let
 
   files = {
     "sass/_palette.scss" = generated.scss;
-    "templates/theme-options.html" = generated.options;
+    "templates/theme-check.html" = generated.check;
   };
 in
 {
