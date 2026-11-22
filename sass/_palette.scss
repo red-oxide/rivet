@@ -1,9 +1,10 @@
-// Generated from red-oxide/base24-themes by `nix run .#generate-palette`
-// Scheme: Birdland
-// Variant: dark
-// Do not edit manually.
+// Generated from red-oxide/base24-themes by `nix run .#generate-palette`.
+// Do not edit manually. `:root` gets birdland, for pages without a theme.
 
-:root {
+// Birdland (dark)
+:root,
+[data-theme="birdland"] {
+  color-scheme: dark;
   --base00: #0b0b0b;
   --base01: #151515;
   --base02: #292929;
@@ -28,4 +29,323 @@
   --base15: #a6d3c1;
   --base16: #f0a764;
   --base17: #d6875c;
+}
+
+// Birdland Light (light)
+[data-theme="birdland-light"] {
+  color-scheme: light;
+  --base00: #f4efe4;
+  --base01: #ebe5d8;
+  --base02: #ddd5c5;
+  --base03: #a39c90;
+  --base04: #6b665e;
+  --base05: #26231f;
+  --base06: #151413;
+  --base07: #0b0b0b;
+  --base08: #b83c00;
+  --base09: #9a5000;
+  --base0A: #7a611d;
+  --base0B: #3b7048;
+  --base0C: #356a63;
+  --base0D: #7f5530;
+  --base0E: #9b4a2e;
+  --base0F: #6d6455;
+  --base10: #efe9dd;
+  --base11: #e9e3d6;
+  --base12: #a83300;
+  --base13: #6b5410;
+  --base14: #2e6140;
+  --base15: #2c5d57;
+  --base16: #6c4626;
+  --base17: #8a3f24;
+}
+
+// Blue Crab (dark)
+[data-theme="blue-crab"] {
+  color-scheme: dark;
+  --base00: #08161a;
+  --base01: #0f2026;
+  --base02: #1d353d;
+  --base03: #35525b;
+  --base04: #83a0a6;
+  --base05: #dfe8e6;
+  --base06: #edf3f1;
+  --base07: #fafdfc;
+  --base08: #ed5a3b;
+  --base09: #f2802a;
+  --base0A: #e6b450;
+  --base0B: #6fbf8e;
+  --base0C: #3fc2c0;
+  --base0D: #7fb0e6;
+  --base0E: #d48bb0;
+  --base0F: #b59a7a;
+  --base10: #051014;
+  --base11: #020a0c;
+  --base12: #ff7556;
+  --base13: #f7cb6e;
+  --base14: #8ad6a6;
+  --base15: #66d9d6;
+  --base16: #9cc6f2;
+  --base17: #e5a6c6;
+}
+
+// Blue Crab Light (light)
+[data-theme="blue-crab-light"] {
+  color-scheme: light;
+  --base00: #eef4f2;
+  --base01: #e3ecea;
+  --base02: #d1dedb;
+  --base03: #92a7a4;
+  --base04: #5a706d;
+  --base05: #13282d;
+  --base06: #0b1c20;
+  --base07: #08161a;
+  --base08: #c42909;
+  --base09: #a74902;
+  --base0A: #865e0d;
+  --base0B: #2f7349;
+  --base0C: #1f706e;
+  --base0D: #1b66b8;
+  --base0E: #ae3974;
+  --base0F: #7c6141;
+  --base10: #e9f0ee;
+  --base11: #e3ebe8;
+  --base12: #b02508;
+  --base13: #78540c;
+  --base14: #2a6641;
+  --base15: #1b6463;
+  --base16: #185ba4;
+  --base17: #9b3368;
+}
+
+// Eastern Shore (dark)
+[data-theme="eastern-shore"] {
+  color-scheme: dark;
+  --base00: #0c0c0c;
+  --base01: #161616;
+  --base02: #2a2a2a;
+  --base03: #4a4a4a;
+  --base04: #9a9a9a;
+  --base05: #dcdcdc;
+  --base06: #ececec;
+  --base07: #fafafa;
+  --base08: #e3561c;
+  --base09: #f2802e;
+  --base0A: #d9bf86;
+  --base0B: #8aa864;
+  --base0C: #7fb3b8;
+  --base0D: #8fa8c4;
+  --base0E: #c48a8a;
+  --base0F: #a8a39a;
+  --base10: #070707;
+  --base11: #030303;
+  --base12: #ff6a2a;
+  --base13: #ecd29c;
+  --base14: #a2c07c;
+  --base15: #9ccbd0;
+  --base16: #a9c0da;
+  --base17: #d8a2a2;
+}
+
+// Eastern Shore Light (light)
+[data-theme="eastern-shore-light"] {
+  color-scheme: light;
+  --base00: #f2f2f0;
+  --base01: #e9e9e6;
+  --base02: #d9d9d5;
+  --base03: #9d9d98;
+  --base04: #636360;
+  --base05: #222222;
+  --base06: #151515;
+  --base07: #0c0c0c;
+  --base08: #b23d0e;
+  --base09: #a84802;
+  --base0A: #7e6122;
+  --base0B: #556b38;
+  --base0C: #3b6d72;
+  --base0D: #46688e;
+  --base0E: #a04b4b;
+  --base0F: #6b655a;
+  --base10: #ededea;
+  --base11: #e7e7e4;
+  --base12: #9f370c;
+  --base13: #70561e;
+  --base14: #4d6133;
+  --base15: #346065;
+  --base16: #3e5c7e;
+  --base17: #904343;
+}
+
+// Harbor (dark)
+[data-theme="harbor"] {
+  color-scheme: dark;
+  --base00: #15191b;
+  --base01: #1e2326;
+  --base02: #31383c;
+  --base03: #4f585d;
+  --base04: #96a0a4;
+  --base05: #dde6e3;
+  --base06: #ebf1ef;
+  --base07: #f9fcfb;
+  --base08: #ee5a2c;
+  --base09: #f58a3c;
+  --base0A: #d8c27a;
+  --base0B: #4fae8a;
+  --base0C: #8fd8c4;
+  --base0D: #7fb0c8;
+  --base0E: #c494b8;
+  --base0F: #a8a49a;
+  --base10: #101315;
+  --base11: #0a0c0d;
+  --base12: #ff7040;
+  --base13: #ead594;
+  --base14: #6cc8a3;
+  --base15: #a8e8d6;
+  --base16: #9cc6db;
+  --base17: #d8acc9;
+}
+
+// Harbor Light (light)
+[data-theme="harbor-light"] {
+  color-scheme: light;
+  --base00: #eef1f0;
+  --base01: #e4e8e7;
+  --base02: #d4dad8;
+  --base03: #979f9c;
+  --base04: #5d6563;
+  --base05: #1e2427;
+  --base06: #15191b;
+  --base07: #0d1011;
+  --base08: #bb3106;
+  --base09: #a74701;
+  --base0A: #75611d;
+  --base0B: #2f7057;
+  --base0C: #226f5a;
+  --base0D: #346a85;
+  --base0E: #924c80;
+  --base0F: #686358;
+  --base10: #e9edec;
+  --base11: #e3e8e6;
+  --base12: #a72c06;
+  --base13: #69571a;
+  --base14: #29634d;
+  --base15: #1e6350;
+  --base16: #2e5e76;
+  --base17: #814372;
+}
+
+// Red Oxide (dark)
+[data-theme="red-oxide"] {
+  color-scheme: dark;
+  --base00: #14100f;
+  --base01: #1d1716;
+  --base02: #332926;
+  --base03: #54453f;
+  --base04: #9a8a82;
+  --base05: #e8e4dd;
+  --base06: #f3f2ef;
+  --base07: #fbfaf8;
+  --base08: #dc5a3e;
+  --base09: #e5823f;
+  --base0A: #d6a94e;
+  --base0B: #82ad84;
+  --base0C: #6fbcb0;
+  --base0D: #8ea6c8;
+  --base0E: #c98a8f;
+  --base0F: #b49a85;
+  --base10: #0e0b0a;
+  --base11: #080605;
+  --base12: #f0705a;
+  --base13: #ebc46c;
+  --base14: #9cc69e;
+  --base15: #8ed4c8;
+  --base16: #a9bede;
+  --base17: #dca5a9;
+}
+
+// Red Oxide Light (light)
+[data-theme="red-oxide-light"] {
+  color-scheme: light;
+  --base00: #f3f2ef;
+  --base01: #e9e7e2;
+  --base02: #d9d5ce;
+  --base03: #a19891;
+  --base04: #675d58;
+  --base05: #2a1c18;
+  --base06: #1c120f;
+  --base07: #120b09;
+  --base08: #9a3b26;
+  --base09: #a34a0e;
+  --base0A: #805d18;
+  --base0B: #456d47;
+  --base0C: #2f6d64;
+  --base0D: #436596;
+  --base0E: #a3454c;
+  --base0F: #7a5e47;
+  --base10: #eeece8;
+  --base11: #e8e5e0;
+  --base12: #5a2216;
+  --base13: #735415;
+  --base14: #3e623f;
+  --base15: #2a635a;
+  --base16: #3c5b86;
+  --base17: #933e45;
+}
+
+// Spangled (dark)
+[data-theme="spangled"] {
+  color-scheme: dark;
+  --base00: #0b0d14;
+  --base01: #141722;
+  --base02: #262a3a;
+  --base03: #434860;
+  --base04: #8a8fa3;
+  --base05: #e6e1d6;
+  --base06: #f2efe8;
+  --base07: #fffdf8;
+  --base08: #e8513a;
+  --base09: #f06a1d;
+  --base0A: #f2b632;
+  --base0B: #7fae5e;
+  --base0C: #8cc4d8;
+  --base0D: #8ea6e0;
+  --base0E: #d98bc0;
+  --base0F: #b79a6a;
+  --base10: #07080d;
+  --base11: #030407;
+  --base12: #ff6b52;
+  --base13: #ffcc55;
+  --base14: #99c878;
+  --base15: #a9daea;
+  --base16: #aabcf0;
+  --base17: #eaa6d3;
+}
+
+// Spangled Light (light)
+[data-theme="spangled-light"] {
+  color-scheme: light;
+  --base00: #f4f1ea;
+  --base01: #ebe7de;
+  --base02: #dcd7cb;
+  --base03: #a29d93;
+  --base04: #686459;
+  --base05: #1c2030;
+  --base06: #121522;
+  --base07: #0b0d14;
+  --base08: #c0250d;
+  --base09: #ae4203;
+  --base0A: #865d02;
+  --base0B: #4b6e33;
+  --base0C: #276c85;
+  --base0D: #2f5dcc;
+  --base0E: #ac3185;
+  --base0F: #795f36;
+  --base10: #efebe3;
+  --base11: #e9e5dc;
+  --base12: #ad210c;
+  --base13: #775302;
+  --base14: #43622e;
+  --base15: #236075;
+  --base16: #2a53b6;
+  --base17: #9a2c77;
 }
