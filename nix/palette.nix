@@ -1,60 +1,53 @@
-# rivet's palette: `nix run .#generate-palette` writes sass/_palette.scss, the
-# --base00 … --base17 custom properties every rivet site shares, from a
-# base24-themes scheme. Change the scheme here and regenerate to recolor every
-# site.
+# rivet's palettes: `nix run .#generate-palette` writes sass/_palette.scss and
+# templates/theme-options.html from every base24-themes scheme (see
+# lib/palette.nix). Sites pick a default with extra.rivet.theme, and visitors
+# can switch in the header. `nix flake check` fails if either file is stale.
 { inputs, lib, ... }:
 
 let
-  inherit (inputs.base24-themes.lib) base24;
-  scheme = "birdland";
-  output = "sass/_palette.scss";
+  generated = import ../lib/palette.nix {
+    inherit lib;
+    inherit (inputs.base24-themes.lib) base24;
+  };
+
+  files = {
+    "sass/_palette.scss" = generated.scss;
+    "templates/theme-options.html" = generated.options;
+  };
 in
 {
   perSystem =
     { pkgs, ... }:
 
     let
-      theme = base24.themes.${scheme};
-      meta = base24.getMeta theme;
-      colors = base24.getColors theme;
-
-      cssColors = lib.concatMapStringsSep "\n" (
-        name: "  --${name}: #" + colors.${name} + ";"
-      ) base24.colorNames;
-
-      generatedScss = ''
-        // Generated from red-oxide/base24-themes by `nix run .#generate-palette`
-        // Scheme: ${meta.name}
-        // Variant: ${meta.variant}
-        // Do not edit manually.
-
-        :root {
-        ${cssColors}
-        }
-      '';
+      store = lib.mapAttrs (path: text: pkgs.writeText (baseNameOf path) text) files;
     in
     {
       packages.generate-palette = pkgs.writeShellApplication {
         name = "generate-palette";
 
-        runtimeInputs = [
-          pkgs.coreutils
-        ];
+        runtimeInputs = [ pkgs.coreutils ];
 
         text = ''
-          set -euo pipefail
-
-          output="''${1:-${output}}"
-
-          mkdir -p "$(dirname "$output")"
-
-          # generatedScss ends in a newline, so the delimiter follows it
-          # directly: no trailing blank line for the formatter to remove.
-          cat > "$output" <<'PALETTE_SCSS'
-          ${generatedScss}PALETTE_SCSS
-
-          echo "Generated $output"
-        '';
+          root="''${1:-.}"
+        ''
+        + lib.concatStrings (
+          lib.mapAttrsToList (path: file: ''
+            mkdir -p "$root/${dirOf path}"
+            install -m 644 ${file} "$root/${path}"
+            echo "Generated $root/${path}"
+          '') store
+        );
       };
+
+      checks.palette = pkgs.runCommand "rivet-palette-up-to-date" { } (
+        lib.concatStrings (
+          lib.mapAttrsToList (path: file: ''
+            diff -u ${../. + "/${path}"} ${file} \
+              || { echo "${path} is stale: run \`nix run .#generate-palette\`"; exit 1; }
+          '') store
+        )
+        + "touch $out\n"
+      );
     };
 }

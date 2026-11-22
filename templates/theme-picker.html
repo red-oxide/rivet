@@ -1,0 +1,46 @@
+{#- The header's theme picker: every base24-themes family (theme-options.html,
+    generated) and a light/dark toggle. Choices are saved in localStorage and
+    applied by the script in base.html. Hidden until that script runs, so
+    visitors without JavaScript see the site's default.
+    Turn it off with extra.rivet.theme_picker = false. -#}
+<div class="theme-picker" hidden>
+    <select class="theme-select" aria-label="Color theme">{% include "theme-options.html" %}</select>
+    <button class="theme-mode" type="button"></button>
+</div>
+<script>
+    (function () {
+        var root = document.documentElement;
+        var picker = document.currentScript.previousElementSibling;
+        var select = picker.querySelector(".theme-select");
+        var button = picker.querySelector(".theme-mode");
+
+        function save(key, value) {
+            try { localStorage.setItem(key, value); } catch (e) {}
+        }
+
+        function apply() {
+            var mode = root.dataset.mode;
+            root.dataset.theme = select.value + (mode === "light" ? "-light" : "");
+            button.textContent = mode;
+            button.setAttribute("aria-label", "Switch to " + (mode === "light" ? "dark" : "light") + " mode");
+        }
+
+        var family = root.dataset.theme.replace(/-light$/, "");
+        select.value = family;
+        // A saved theme that no longer exists: back to the site's default.
+        if (select.value !== family) select.value = root.dataset.defaultTheme;
+
+        select.addEventListener("change", function () {
+            save("rivet-theme", select.value);
+            apply();
+        });
+        button.addEventListener("click", function () {
+            root.dataset.mode = root.dataset.mode === "light" ? "dark" : "light";
+            save("rivet-mode", root.dataset.mode);
+            apply();
+        });
+
+        apply();
+        picker.hidden = false;
+    })();
+</script>

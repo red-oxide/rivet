@@ -10,11 +10,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795333473,
-        "narHash": "sha256-3DBNnrnGSOo8j/ZrByLJsshYm42MCTlW/PFdKhCSpqk=",
+        "lastModified": 1795384115,
+        "narHash": "sha256-C4ZoKssGX8JOgfUxWkMCV/zJm0F3SaEtJmLY+Ltdz34=",
         "owner": "red-oxide",
         "repo": "base24-themes",
-        "rev": "9566484953448e438006c428808467df6b3dc848",
+        "rev": "5c3ed81f5afd6e13ed007ce68bf314243a1ea255",
         "type": "github"
       },
       "original": {

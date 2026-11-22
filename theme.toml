@@ -1,5 +1,5 @@
 demo        = "https://red-oxide.org"
-description = "A terminal-flavored Zola theme with base24 palettes, shared by chris.palmerlife.online and red-oxide.org."
+description = "A terminal-flavored Zola theme with switchable base24 palettes, shared by chris.palmerlife.online and red-oxide.org."
 homepage    = "https://github.com/red-oxide/rivet"
 license     = "MIT"
 min_version = "0.23.0"
