@@ -1,34 +1,13 @@
 {#- Site settings live under [extra.rivet] in zola.toml; see the README. -#}
 {%- set rivet = config.extra.rivet | default(value={}) -%}
-{%- set theme = rivet.theme | default(value="birdland") -%}
-{%- set mode = rivet.mode | default(value="dark") -%}
-{%- set data_theme = theme ~ "-light" if mode == "light" else theme -%}
+{%- include "theme-check.html" -%}
 <!DOCTYPE html>
 <html lang="{{ lang | default(value=config.default_language) }}"
-      data-theme="{{ data_theme }}"
-      data-default-theme="{{ theme }}"
-      data-default-mode="{{ mode }}">
+      data-theme="{{ rivet.theme | default(value='birdland') }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="color-scheme" content="dark light">
-        {#- Apply the visitor's saved theme (see theme-picker.html) before the
-            first paint; mode "auto" follows the system's light/dark setting. -#}
-        <script>
-            (function () {
-                var root = document.documentElement, saved = {};
-                try {
-                    saved.theme = localStorage.getItem("rivet-theme");
-                    saved.mode = localStorage.getItem("rivet-mode");
-                } catch (e) {}
-                var mode = saved.mode || root.dataset.defaultMode;
-                if (mode === "auto") {
-                    mode = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-                }
-                root.dataset.mode = mode;
-                root.dataset.theme = (saved.theme || root.dataset.defaultTheme) + (mode === "light" ? "-light" : "");
-            })();
-        </script>
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
         <meta name="description"
               content="{%- block description -%}{{ config.description }}{%- endblock description -%}">
@@ -96,9 +75,6 @@
                     {{ config.title -}}
                 </a>
                 {% include "nav.html" %}
-                {%- if rivet.theme_picker | default(value=true) %}
-                    {% include "theme-picker.html" %}
-                {%- endif %}
             </div>
         </header>
         <main>

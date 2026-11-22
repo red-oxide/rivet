@@ -1,0 +1,19 @@
+{#- Generated from red-oxide/base24-themes by `nix run .#generate-palette`. -#}
+{#- Do not edit manually. Included by base.html. -#}
+{%- set rivet_themes = [
+    "birdland",
+    "birdland-light",
+    "blue-crab",
+    "blue-crab-light",
+    "eastern-shore",
+    "eastern-shore-light",
+    "harbor",
+    "harbor-light",
+    "red-oxide",
+    "red-oxide-light",
+    "spangled",
+    "spangled-light"
+] -%}
+{%- if rivet.theme | default(value="birdland") not in rivet_themes -%}
+    {{ throw(message="extra.rivet.theme: unknown theme '" ~ rivet.theme ~ "'; rivet has " ~ rivet_themes | join(sep=", ")) }}
+{%- endif -%}

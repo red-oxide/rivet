@@ -54,7 +54,6 @@ article,
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  margin-left: auto;
   gap: 1rem;
 
   a {
@@ -74,39 +73,6 @@ article,
     &[aria-current="page"] {
       color: var(--orange);
     }
-  }
-}
-
-/* Theme picker (theme-picker.html) */
-
-.theme-picker {
-  display: flex;
-  gap: 0.5rem;
-
-  &[hidden] {
-    display: none;
-  }
-
-  select,
-  button {
-    padding: 0.2rem 0.5rem;
-    border: 1px solid var(--background-highlight);
-    border-radius: var(--border-radius);
-    background: var(--background);
-    color: var(--foreground-muted);
-    font: inherit;
-    font-size: 0.875rem;
-    cursor: pointer;
-
-    &:hover,
-    &:focus-visible {
-      border-color: var(--orange);
-      color: var(--foreground-bright);
-    }
-  }
-
-  button {
-    min-width: 4rem;
   }
 }
 
