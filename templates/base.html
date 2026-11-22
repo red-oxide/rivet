@@ -2,9 +2,10 @@
 {%- set rivet = config.extra.rivet | default(value={}) -%}
 {%- set theme = rivet.theme | default(value="birdland") -%}
 {%- set mode = rivet.mode | default(value="dark") -%}
+{%- set data_theme = theme ~ "-light" if mode == "light" else theme -%}
 <!DOCTYPE html>
 <html lang="{{ lang | default(value=config.default_language) }}"
-      data-theme="{{ theme }}{% if mode == "light" %}-light{% endif %}"
+      data-theme="{{ data_theme }}"
       data-default-theme="{{ theme }}"
       data-default-mode="{{ mode }}">
     <head>
