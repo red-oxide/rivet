@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # The files `nix run .#generate-palette` writes, from every base24-themes
 # scheme. Pure: it needs only a nixpkgs `lib` and base24-themes' `lib.base24`.
 #

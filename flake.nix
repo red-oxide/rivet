@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 {
   description = "rivet: the Zola theme shared by chris.palmerlife.online and red-oxide.org";
 
