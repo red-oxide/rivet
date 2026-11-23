@@ -1,3 +1,7 @@
+{#-
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-#}
 <?xml version="1.0" encoding="UTF-8"?>
 {#- Zola's built-in atom.xml (0.23.6) plus <icon>/<logo> from
     extra.rivet.feed_image; see the README. -#}

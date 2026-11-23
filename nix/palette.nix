@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # rivet's palettes: `nix run .#generate-palette` writes sass/_palette.scss and
 # templates/theme-check.html from every base24-themes scheme (see
 # lib/palette.nix). Sites pick one with extra.rivet.theme. `nix flake check`
