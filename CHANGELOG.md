@@ -6,9 +6,12 @@ SPDX-License-Identifier: MIT
 # Changelog
 
 All notable changes to rivet are recorded here. The format follows
-[Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+[Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions use
+CalVer: `YY.MINOR.PATCH`, where `YY` is the calendar year.
 
 ## [Unreleased]
+
+## [26.0.0] - 2026-11-24
 
 ### Added
 
@@ -45,4 +48,5 @@ All notable changes to rivet are recorded here. The format follows
 - Stylesheets are cache-busted, so a browser no longer keeps showing an old look
   after a deploy.
 
-[unreleased]: https://github.com/red-oxide/rivet/commits/master
+[26.0.0]: https://github.com/red-oxide/rivet/releases/tag/v26.0.0
+[unreleased]: https://github.com/red-oxide/rivet/compare/v26.0.0...HEAD
