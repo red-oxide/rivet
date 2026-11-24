@@ -24,10 +24,10 @@ CalVer: `YY.MINOR.PATCH`, where `YY` is the calendar year.
   before the title, bases before nav links, tags and `h3`, a stitched baseball
   before `h2`, and stitching along the header, footer, cards and avatar. The
   previous look stays available as `terminal`.
-- Every [base24-themes](https://github.com/red-oxide/base24-themes) scheme,
-  dark and light, generated into `sass/_palette.scss`. `extra.rivet.theme`
-  picks one (default `birdland`); an unknown name fails the build and lists
-  the valid ones.
+- Every [base24-themes](https://github.com/red-oxide/base24-themes) scheme, dark
+  and light, generated into `sass/_palette.scss`. `extra.rivet.theme` picks one
+  (default `birdland`); an unknown name fails the build and lists the valid
+  ones.
 - `nix run .#generate-palette` to regenerate the palette, and flake checks that
   fail when the generated files are stale.
 - REUSE compliance: SPDX headers, `REUSE.toml`, `LICENSES/` and a `reuse lint`
