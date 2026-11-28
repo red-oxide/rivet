@@ -11,6 +11,14 @@ CalVer: `YY.MINOR.PATCH`, where `YY` is the calendar year.
 
 ## [Unreleased]
 
+### Changed
+
+- The flake's inputs (nixpkgs, devfmt, base24-themes) are pinned with
+  [tack](https://github.com/manic-systems/tack) in `.tack/` instead of flake
+  inputs, and `flake.lock` is gone. A daily `update-pins` workflow runs
+  `tack update` in place of `update-flake-lock`; the dev shell has tack, and
+  `just update` / `just look` / `just tack` run it.
+
 ## [26.0.0] - 2026-11-24
 
 ### Added

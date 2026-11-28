@@ -8,10 +8,10 @@ on:
     branches: [master]
   pull_request:
   workflow_dispatch:
-  # "Update flake inputs" pushes with the built-in token, which doesn't
-  # start other workflows, so check its lock updates when it finishes.
+  # "Update pins" pushes with the built-in token, which doesn't start other
+  # workflows, so check its lock updates when it finishes.
   workflow_run:
-    workflows: ["Update flake inputs"]
+    workflows: ["Update pins"]
     types: [completed]
 
 permissions:

@@ -34,8 +34,8 @@ properties per scheme. A site picks one with `theme` (see Settings); the default
 is `birdland`. An unknown name fails the build with the list of valid ones.
 
 The palette and that list (`templates/theme-check.html`) are generated from the
-`base24-themes` flake input; `nix flake check` fails if they are stale. After
-`nix flake update base24-themes`:
+`base24-themes` pin (tack, in `.tack/pins.toml`); `nix flake check` fails if
+they are stale. After `just update base24-themes`:
 
 ```sh
 nix run .#generate-palette   # writes sass/_palette.scss and templates/theme-check.html
